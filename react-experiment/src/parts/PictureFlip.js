@@ -3,6 +3,10 @@ import './PictureFlip.css';
 
 const unsplashUrl = "https://api.unsplash.com/";
 const accessKey = `${process.env.REACT_APP_UNSPLASH_access_key}`;
+const urlRequest = unsplashUrl + "photos?client_id=" + accessKey;
+
+console.log(unsplashUrl+'photos?client_id='+accessKey);
+console.log(urlRequest);
 
 function PictureFlip() {
   return (
