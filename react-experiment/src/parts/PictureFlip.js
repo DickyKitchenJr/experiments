@@ -28,7 +28,7 @@ function PictureFlip() {
 
   return (
     <>
-      <h1>Hi</h1>
+      <h1>Hi. Enjoy these random pictures.</h1>
       {images.map((image) => (
         <Images key={image.id} {...image} />
       ))}
