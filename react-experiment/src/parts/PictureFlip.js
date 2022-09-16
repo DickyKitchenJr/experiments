@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import './PictureFlip.css';
+import Images from './Images';
 
 const unsplashUrl = "https://api.unsplash.com/";
 const accessKey = `${process.env.REACT_APP_UNSPLASH_access_key}`;
@@ -11,6 +12,7 @@ const urlRequest = unsplashUrl + "photos?client_id=" + accessKey;
 
 function PictureFlip() {
   const [images, setImages] = useState([]);
+  console.log(images[0]);
 
   // creates a useEffect that, when called, will retrieve information from the unsplash api
   useEffect(() => {
@@ -26,9 +28,12 @@ function PictureFlip() {
 
   return (
     <>
-      <h1>{images.length}</h1>
+      <h1>Hi</h1>
+      {images.map((image) => (
+        <Images key={image.id} {...image} />
+      ))}
     </>
-  )
+  );
 }
 
 export default PictureFlip
