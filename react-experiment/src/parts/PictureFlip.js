@@ -22,7 +22,6 @@ function PictureFlip() {
       const data = await response.json()
       setImages(data)
     }
-
     // calls the unsplash api
     fetchImages()
   }, [click])
