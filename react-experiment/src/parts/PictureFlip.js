@@ -12,7 +12,8 @@ const urlRequest = unsplashUrl + "photos?client_id=" + accessKey;
 
 function PictureFlip() {
   const [images, setImages] = useState([]);
-  console.log(images[0]);
+  const [click, setClick] = useState(0);
+  console.log(click);
 
   // creates a useEffect that, when called, will retrieve information from the unsplash api
   useEffect(() => {
@@ -24,7 +25,7 @@ function PictureFlip() {
 
     // calls the unsplash api
     fetchImages()
-  }, [])
+  }, [click])
 
   return (
     <>
@@ -32,7 +33,10 @@ function PictureFlip() {
       {images.map((image) => (
         <Images key={image.id} {...image} />
       ))}
-      <button type='button'>More Pictures</button>
+      {/* trying to use onClick to change the click state and re-trigger the useEffect, but it's not working... why? */}
+      <button type="button" onClick={() => setClick(click + 1)}>
+        More Pictures
+      </button>
     </>
   );
 }
