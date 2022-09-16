@@ -32,6 +32,7 @@ function PictureFlip() {
       {images.map((image) => (
         <Images key={image.id} {...image} />
       ))}
+      <button type='button'>More Pictures</button>
     </>
   );
 }
