@@ -4,7 +4,7 @@ import './Images.css';
 function Images(props) {
   return (
     <div>
-        <img src={props.urls.small} alt='here' />
+        <img src={props.urls.small} alt='here' loading='lazy' />
     </div>
   )
 }
