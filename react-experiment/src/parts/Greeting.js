@@ -7,6 +7,10 @@ function Greeting() {
     
   return (
     <>
+        <form>
+            <label for="userName">What's your name?</label>
+            <input type='text' defaultValue={userName} id='userName' name='userName' onChange={(e) => setUserName(e.target.value)} />
+        </form>
       <h1>Hi {userName}. Enjoy these random pictures.</h1>
     </>
   );
