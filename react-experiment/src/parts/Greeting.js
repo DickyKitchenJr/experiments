@@ -8,14 +8,16 @@ function Greeting() {
   return (
     <>
       <form>
-        <label for="userName">What's your name?</label>
-        <input
-          type="text"
-          defaultValue={userName}
-          id="userName"
-          name="userName"
-          onChange={(e) => setUserName(e.target.value)}
-        />
+        <label>
+          What's your name?
+          <input
+            type="text"
+            defaultValue={userName}
+            id="userName"
+            name="userName"
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </label>
       </form>
       <h1>Hi {userName}. Enjoy these random pictures.</h1>
     </>
