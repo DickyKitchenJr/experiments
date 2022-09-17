@@ -2,10 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./PictureFlip.css";
 import Images from "./Images";
+import Greeting from "./Greeting";
 
 const unsplashUrl = "https://api.unsplash.com/";
 const accessKey = `${process.env.REACT_APP_UNSPLASH_access_key}`;
 const urlRequest = unsplashUrl + "photos?client_id=" + accessKey;
+
 
 // GOAL = to retrieve images from unsplash api and display new images when a button is clicked
 
@@ -27,7 +29,7 @@ function PictureFlip() {
 
   return (
     <>
-      <h1>Hi. Enjoy these random pictures.</h1>
+      <Greeting />
       {images.map((image) => (
         <Images key={image.id} {...image} />
       ))}
