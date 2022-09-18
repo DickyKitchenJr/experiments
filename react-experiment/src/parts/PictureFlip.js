@@ -8,14 +8,14 @@ const unsplashUrl = "https://api.unsplash.com/";
 const accessKey = `${process.env.REACT_APP_UNSPLASH_access_key}`;
 const urlRequest = unsplashUrl + "photos?client_id=" + accessKey;
 
-console.log(urlRequest);
+// console.log(urlRequest);
 
 const urlRequest2 =
   unsplashUrl +
   "search/photos?query=cats&page=1&per_page=10&client_id=" +
   accessKey;
 
-console.log(urlRequest2);
+// console.log(urlRequest2);
 
 // GOAL = to retrieve images from unsplash api and display new images when a button is clicked
 
@@ -31,7 +31,7 @@ function PictureFlip() {
       const response = await fetch(urlRequest);
       const data = await response.json();
       setImages(data);
-      console.log(data);
+      // console.log(data);
       //  remove console.log later
     };
     // calls the unsplash api
@@ -43,7 +43,7 @@ function PictureFlip() {
       const response = await fetch(urlRequest2);
       const data = await response.json();
       setImages2(data);
-      console.log(data);
+      // console.log(data);
       //  remove console.log later
     };
     // calls the unsplash api
@@ -52,14 +52,12 @@ function PictureFlip() {
 
   let imageFiltered = images2.results;
   console.log(imageFiltered);
+  console.log(typeof imageFiltered);
+
 
   return (
     <>
       <Greeting />
-      {/* failed attempt to go through the images
-       {imageFiltered.map((image) => (
-        <Images key={image.id} {...image} />
-      ))} */}
       {images.map((image) => (
         <Images key={image.id} {...image} />
       ))}
