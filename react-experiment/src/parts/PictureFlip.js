@@ -8,13 +8,22 @@ const unsplashUrl = "https://api.unsplash.com/";
 const accessKey = `${process.env.REACT_APP_UNSPLASH_access_key}`;
 const urlRequest = unsplashUrl + "photos?client_id=" + accessKey;
 
+console.log(urlRequest);
+
+const urlRequest2 =
+  unsplashUrl +
+  "search/photos?query=cats&page=1&per_page=10&client_id=" +
+  accessKey;
+
+console.log(urlRequest2);
 
 // GOAL = to retrieve images from unsplash api and display new images when a button is clicked
 
 function PictureFlip() {
   const [images, setImages] = useState([]);
+  // images2 created to experiment with api request without breaking page
+  const [images2, setImages2] = useState([]);
   const [click, setClick] = useState(0);
-  console.log(click);
 
   // creates a useEffect that, when called, will retrieve information from the unsplash api
   useEffect(() => {
@@ -22,14 +31,35 @@ function PictureFlip() {
       const response = await fetch(urlRequest);
       const data = await response.json();
       setImages(data);
+      console.log(data);
+      //  remove console.log later
     };
     // calls the unsplash api
     fetchImages();
   }, [click]);
 
+  useEffect(() => {
+    const fetchImages2 = async () => {
+      const response = await fetch(urlRequest2);
+      const data = await response.json();
+      setImages2(data);
+      console.log(data);
+      //  remove console.log later
+    };
+    // calls the unsplash api
+    fetchImages2();
+  }, []);
+
+  let imageFiltered = images2.results;
+  console.log(imageFiltered);
+
   return (
     <>
       <Greeting />
+      {/* failed attempt to go through the images
+       {imageFiltered.map((image) => (
+        <Images key={image.id} {...image} />
+      ))} */}
       {images.map((image) => (
         <Images key={image.id} {...image} />
       ))}
