@@ -38,6 +38,8 @@ function PictureFlip() {
     fetchImages();
   }, [click]);
 
+  // TODO: implement Brian Jenney's solution and check for understanding
+
   useEffect(() => {
     const fetchImages2 = async () => {
       const response = await fetch(urlRequest2);
@@ -53,7 +55,6 @@ function PictureFlip() {
   let imageFiltered = images2.results;
   console.log(imageFiltered);
   console.log(typeof imageFiltered);
-
 
   return (
     <>
