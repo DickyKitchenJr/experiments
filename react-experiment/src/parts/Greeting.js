@@ -19,7 +19,7 @@ function Greeting() {
           />
         </label>
       </form>
-      <h1>Hi {userName}. Enjoy these random pictures.</h1>
+      <h1>Hi {userName}. What type of pictures do you want to see?</h1>
     </>
   );
 }
