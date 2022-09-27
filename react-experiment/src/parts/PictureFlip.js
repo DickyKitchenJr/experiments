@@ -49,7 +49,7 @@ function PictureFlip() {
       {images.map((image) => (
         <Images key={image.id} {...image} />
       ))}
-      {/* trying to use onClick to change the click state and re-trigger the useEffect, but it's not working... why? */}
+      {/* FIXME: trying to use onClick to change the click state and re-trigger the useEffect, but it's not working... why? */}
       <button type="button" onClick={() => setClick(click + 1)}>
         More Pictures
       </button>
