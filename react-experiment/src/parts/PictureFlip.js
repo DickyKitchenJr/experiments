@@ -46,6 +46,17 @@ function PictureFlip() {
   return (
     <>
       <Greeting />
+      <div>
+        <label>
+          <input type="radio" name="pictureSelect"></input>Random
+        </label>
+        <label>
+          <input type="radio" name="pictureSelect"></input>Cats
+        </label>
+        <label>
+          <input type="radio" name="pictureSelect"></input>Dogs
+        </label>
+      </div>
       {images.map((image) => (
         <Images key={image.id} {...image} />
       ))}
