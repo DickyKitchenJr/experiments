@@ -24,7 +24,8 @@ const urlRequestDogs =
 
 function PictureFlip() {
   const [images, setImages] = useState([]);
-  // images2 created to experiment with api request without breaking page
+  const [radioSelect, setRadioSelect] = useState("random")
+//  TODO: erase click/setClick if unused at end of project
   const [click, setClick] = useState(0);
 
   // creates a useEffect that, when called, will retrieve information from the unsplash api
@@ -33,12 +34,15 @@ function PictureFlip() {
       const response = await fetch(urlRequestRandom);
       const data = await response.json();
       setImages(data);
-      // console.log(data);
-      //  remove console.log later
     };
     // calls the unsplash api
     fetchImages();
   }, [click]);
+
+
+  const handleChange = (e) => {
+    setRadioSelect(e.target.value)
+  }
 
   // TODO: implement Brian Jenney's solution and check for understanding
 
@@ -46,17 +50,40 @@ function PictureFlip() {
   return (
     <>
       <Greeting />
+
       <div>
         <label>
-          <input type="radio" name="pictureSelect"></input>Random
+          <input
+            type="radio"
+            name="pictureSelect"
+            value="random"
+            checked={radioSelect === "random"}
+            onChange={handleChange}
+          ></input>
+          Random
         </label>
         <label>
-          <input type="radio" name="pictureSelect"></input>Cats
+          <input
+            type="radio"
+            name="pictureSelect"
+            value="cats"
+            checked={radioSelect === "cats"}
+            onChange={handleChange}
+          ></input>
+          Cats
         </label>
         <label>
-          <input type="radio" name="pictureSelect"></input>Dogs
+          <input
+            type="radio"
+            name="pictureSelect"
+            value="dogs"
+            checked={radioSelect === "dogs"}
+            onChange={handleChange}
+          ></input>
+          Dogs
         </label>
       </div>
+
       {images.map((image) => (
         <Images key={image.id} {...image} />
       ))}
