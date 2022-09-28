@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "./PictureFlip.css";
 import Images from "./Images";
 import Greeting from "./Greeting";
+import Images2 from "./Images2";
 
 const unsplashUrl = "https://api.unsplash.com/";
 const accessKey = `${process.env.REACT_APP_UNSPLASH_access_key}`;
