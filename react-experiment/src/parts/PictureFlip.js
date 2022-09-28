@@ -29,15 +29,14 @@ function PictureFlip() {
   const [click, setClick] = useState(0);
 
   // creates a useEffect that, when called, will retrieve information from the unsplash api
-  useEffect(() => {
-    const fetchImages = async () => {
-      const response = await fetch(urlRequestRandom);
-      const data = await response.json();
-      setImages(data);
-    };
-    // calls the unsplash api
-    fetchImages();
-  }, [click]);
+  // useEffect(() => {
+  //   const fetchImages = async () => {
+  //     const response = await fetch(urlRequestRandom);
+  //     const data = await response.json();
+  //     setImages(data);
+  //   };
+  //   fetchImages();
+  // }, [click]);
 
 
   const handleChange = (e) => {
@@ -45,12 +44,32 @@ function PictureFlip() {
   }
 
   // TODO: implement Brian Jenney's solution and check for understanding
+  // TODO: figure out how to take data and set it to setImages; perhaps conditionally?
+  const RandomPics = () =>{
+    fetch(urlRequestRandom)
+    .then((res) => res.json())
+    .then((json) => {
+      const pictures = (json).map((data) => {
+        return {
+          id: data.id,
+          user: data.user.first_name,
+          img: data.urls.small,
+          html: data.links.html
+        };
+      });
+      console.log(pictures);
+      for (const thing in pictures){
+        console.log(pictures[thing]);
+      };
+    });
+  }
 
 
   return (
     <>
       <Greeting />
-
+      {/* calling RandomPics to retrieve console.log info */}
+      <RandomPics />
       <div>
         <label>
           <input
@@ -84,9 +103,10 @@ function PictureFlip() {
         </label>
       </div>
 
-      {images.map((image) => (
+
+      {/* {images.map((image) => (
         <Images key={image.id} {...image} />
-      ))}
+      ))} */}
       {/* FIXME: trying to use onClick to change the click state and re-trigger the useEffect, but it's not working... why? */}
       <button type="button" onClick={() => setClick(click + 1)}>
         More Pictures
