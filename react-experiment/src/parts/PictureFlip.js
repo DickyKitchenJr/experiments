@@ -50,6 +50,7 @@ function PictureFlip() {
     fetch(urlRequestRandom)
     .then((res) => res.json())
     .then((json) => {
+      // console.log(json);
       const pictures = (json).map((data) => {
         return {
           id: data.id,
@@ -59,18 +60,59 @@ function PictureFlip() {
         };
       });
       console.log(pictures);
-      for (const thing in pictures){
-        console.log(pictures[thing]);
-      };
+      // for (const thing in pictures){
+      //   console.log(pictures[thing]);
+      // };
     });
   }
 
+  const CatPics = () => {
+    fetch(urlRequestCats)
+      .then((res) => res.json())
+      .then((json) => {
+        // console.log(json["results"]);
+        const pictures = json["results"].map((data) => {
+          return {
+            id: data.id,
+            user: data.user.first_name,
+            img: data.urls.small,
+            html: data.links.html,
+          };
+        });
+        console.log(pictures);
+        // for (const thing in pictures) {
+        //   console.log(pictures[thing]);
+        // }
+      });
+  };
+
+  const DogPics = () => {
+    fetch(urlRequestDogs)
+      .then((res) => res.json())
+      .then((json) => {
+        // console.log(json["results"]);
+        const pictures = json["results"].map((data) => {
+          return {
+            id: data.id,
+            user: data.user.first_name,
+            img: data.urls.small,
+            html: data.links.html,
+          };
+        });
+        console.log(pictures);
+        // for (const thing in pictures) {
+        //   console.log(pictures[thing]);
+        // }
+      });
+  };
 
   return (
     <>
       <Greeting />
-      {/* calling RandomPics to retrieve console.log info */}
+      {/* calling RandomPics, CatPics, DogPics to retrieve console.log info */}
       <RandomPics />
+      <CatPics />
+      <DogPics />
       <div>
         <label>
           <input
