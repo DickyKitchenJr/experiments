@@ -46,6 +46,7 @@ function PictureFlip() {
 
   // TODO: implement Brian Jenney's solution and check for understanding
   // TODO: figure out how to take data and set it to setImages; perhaps conditionally?
+  // TODO: conditionally assign data retrieved to Image2 depending on which radio button is selected
   const RandomPics = () =>{
     fetch(urlRequestRandom)
     .then((res) => res.json())
