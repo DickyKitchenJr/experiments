@@ -26,7 +26,7 @@ let pictures;
 
 function PictureFlip() {
   const [images, setImages] = useState([]);
-  const [radioSelect, setRadioSelect] = useState("random")
+  const [radioSelect, setRadioSelect] = useState("random");
 
   // creates a useEffect that, when called, will retrieve information from the unsplash api
   // useEffect(() => {
@@ -38,32 +38,32 @@ function PictureFlip() {
   //   fetchImages();
   // }, [click]);
 
-
   const handleChange = (e) => {
-    setRadioSelect(e.target.value)
-  }
+    setRadioSelect(e.target.value);
+  };
 
   // TODO: implement Brian Jenney's solution and check for understanding
   // TODO: figure out how to take data and set it to setImages; perhaps conditionally?
   // TODO: conditionally assign data retrieved to Image2 depending on which radio button is selected
-  const RandomPics =
+  const RandomPics = () => {
     fetch(urlRequestRandom)
-    .then((res) => res.json())
-    .then((json) => {
-      // console.log(json);
-      pictures = (json).map((data) => {
-        return {
-          id: data.id,
-          user: data.user.first_name,
-          img: data.urls.small,
-          html: data.links.html
-        };
+      .then((res) => res.json())
+      .then((json) => {
+        // console.log(json);
+        pictures = json.map((data) => {
+          return {
+            id: data.id,
+            user: data.user.first_name,
+            img: data.urls.small,
+            html: data.links.html,
+          };
+        });
+        // console.log(pictures);
+        // for (const thing in pictures){
+        //   console.log(pictures[thing]);
+        // };
       });
-      // console.log(pictures);
-      // for (const thing in pictures){
-      //   console.log(pictures[thing]);
-      // };
-    });
+  };
 
   const CatPics = () => {
     fetch(urlRequestCats)
@@ -105,14 +105,9 @@ function PictureFlip() {
       });
   };
 
-
   return (
     <>
       <Greeting />
-      {/* calling RandomPics, CatPics, DogPics to retrieve console.log info */}
-      {/* <RandomPics /> */}
-      <CatPics />
-      <DogPics />
       <div>
         <label>
           <input
