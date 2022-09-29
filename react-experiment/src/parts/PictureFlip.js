@@ -20,7 +20,6 @@ const urlRequestDogs =
   "search/photos?query=dogs&page=1&per_page=10&client_id=" +
   accessKey;
 
-let pictures;
 
 // GOAL = to retrieve images from unsplash api and display new images when a button is clicked
 
@@ -45,12 +44,14 @@ function PictureFlip() {
   // TODO: implement Brian Jenney's solution and check for understanding
   // TODO: figure out how to take data and set it to setImages; perhaps conditionally?
   // TODO: conditionally assign data retrieved to Image2 depending on which radio button is selected
+
+
   const RandomPics = () => {
     fetch(urlRequestRandom)
       .then((res) => res.json())
       .then((json) => {
         // console.log(json);
-        pictures = json.map((data) => {
+        const pictures = json.map((data) => {
           return {
             id: data.id,
             user: data.user.first_name,
