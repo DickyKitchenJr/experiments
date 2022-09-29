@@ -85,6 +85,14 @@ function PictureFlip() {
   };
 
   // TODO: create conditional where radioSelect value determines if RandomPics, DogPics, or CatPics is called
+  if(radioSelect === 'random'){
+    RandomPics();
+  } else if (radioSelect === 'cats'){
+    CatPics();
+  } else {
+    DogPics();
+  }
+
 
   // TODO: send data to <Image /> to display selected pictures to the user
 
