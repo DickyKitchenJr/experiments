@@ -19,7 +19,6 @@ const urlRequestDogs =
   "search/photos?query=dogs&page=1&per_page=10&client_id=" +
   accessKey;
 
-
 // GOAL: = to retrieve images from unsplash api and display new images when a button is clicked
 
 function PictureFlip() {
@@ -31,11 +30,11 @@ function PictureFlip() {
   };
 
   // PURPOSE: variable to be used to store data returned by API
-  
+
   let pictures;
 
   // PURPOSE: functions to call API using 3 different queries and return data to pictures variable
-  
+
   const RandomPics = () => {
     fetch(urlRequestRandom)
       .then((res) => res.json())
@@ -49,7 +48,7 @@ function PictureFlip() {
           };
         });
       });
-      return pictures;
+    return pictures;
   };
 
   const CatPics = () => {
@@ -65,7 +64,7 @@ function PictureFlip() {
           };
         });
       });
-      return pictures;
+    return pictures;
   };
 
   const DogPics = () => {
@@ -81,22 +80,22 @@ function PictureFlip() {
           };
         });
       });
-      return pictures;
+    return pictures;
   };
 
   // TODO: create conditional where radioSelect value determines if RandomPics, DogPics, or CatPics is called
-  if(radioSelect === 'random'){
-    RandomPics();
-  } else if (radioSelect === 'cats'){
-    CatPics();
-  } else {
-    DogPics();
-  }
-
+  // FIXME: returning undefined when console.log(userSelection()) within the return
+  const userSelection = () => {
+    if (radioSelect === "random") {
+      RandomPics();
+    } else if (radioSelect === "cats") {
+      CatPics();
+    } else {
+      DogPics();
+    }
+  };
 
   // TODO: send data to <Image /> to display selected pictures to the user
-
-
 
   return (
     <>
@@ -132,6 +131,8 @@ function PictureFlip() {
           ></input>
           Dogs
         </label>
+        {/* FIXME: returning undefined, why? */}
+        {console.log(userSelection())}
       </div>
     </>
   );
