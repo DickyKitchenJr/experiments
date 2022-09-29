@@ -20,14 +20,13 @@ const urlRequestDogs =
   "search/photos?query=dogs&page=1&per_page=10&client_id=" +
   accessKey;
 
+let pictures;
 
 // GOAL = to retrieve images from unsplash api and display new images when a button is clicked
 
 function PictureFlip() {
   const [images, setImages] = useState([]);
   const [radioSelect, setRadioSelect] = useState("random")
-//  TODO: erase click/setClick if unused at end of project
-  const [click, setClick] = useState(0);
 
   // creates a useEffect that, when called, will retrieve information from the unsplash api
   // useEffect(() => {
@@ -47,12 +46,12 @@ function PictureFlip() {
   // TODO: implement Brian Jenney's solution and check for understanding
   // TODO: figure out how to take data and set it to setImages; perhaps conditionally?
   // TODO: conditionally assign data retrieved to Image2 depending on which radio button is selected
-  const RandomPics = () =>{
+  const RandomPics =
     fetch(urlRequestRandom)
     .then((res) => res.json())
     .then((json) => {
       // console.log(json);
-      const pictures = (json).map((data) => {
+      pictures = (json).map((data) => {
         return {
           id: data.id,
           user: data.user.first_name,
@@ -60,12 +59,11 @@ function PictureFlip() {
           html: data.links.html
         };
       });
-      console.log(pictures);
+      // console.log(pictures);
       // for (const thing in pictures){
       //   console.log(pictures[thing]);
       // };
     });
-  }
 
   const CatPics = () => {
     fetch(urlRequestCats)
@@ -80,7 +78,7 @@ function PictureFlip() {
             html: data.links.html,
           };
         });
-        console.log(pictures);
+        // console.log(pictures);
         // for (const thing in pictures) {
         //   console.log(pictures[thing]);
         // }
@@ -100,18 +98,19 @@ function PictureFlip() {
             html: data.links.html,
           };
         });
-        console.log(pictures);
+        // console.log(pictures);
         // for (const thing in pictures) {
         //   console.log(pictures[thing]);
         // }
       });
   };
 
+
   return (
     <>
       <Greeting />
       {/* calling RandomPics, CatPics, DogPics to retrieve console.log info */}
-      <RandomPics />
+      {/* <RandomPics /> */}
       <CatPics />
       <DogPics />
       <div>
@@ -147,14 +146,9 @@ function PictureFlip() {
         </label>
       </div>
 
-
       {/* {images.map((image) => (
         <Images key={image.id} {...image} />
       ))} */}
-      {/* FIXME: trying to use onClick to change the click state and re-trigger the useEffect, but it's not working... why? */}
-      <button type="button" onClick={() => setClick(click + 1)}>
-        More Pictures
-      </button>
     </>
   );
 }
