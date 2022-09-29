@@ -85,6 +85,7 @@ function PictureFlip() {
 
   // TODO: create conditional where radioSelect value determines if RandomPics, DogPics, or CatPics is called
   // FIXME: returning undefined when console.log(userSelection()) within the return
+  // Possible workaround - create 3 Image functions, each with either RandomPics, DogPics, or CatPics, then make the display of <Image /> conditional
   const userSelection = () => {
     if (radioSelect === "random") {
       RandomPics();
