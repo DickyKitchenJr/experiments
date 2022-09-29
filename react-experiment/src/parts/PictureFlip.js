@@ -34,7 +34,7 @@ function PictureFlip() {
   
   let pictures;
 
-  // PURPOSE: functions to call API using 3 different parameters and return data to pictures variable
+  // PURPOSE: functions to call API using 3 different queries and return data to pictures variable
   
   const RandomPics = () => {
     fetch(urlRequestRandom)
@@ -84,7 +84,11 @@ function PictureFlip() {
       return pictures;
   };
 
-  // TODO: create conditional where user radioSelect determines if RandomPics, DogPics, or CatPics is called
+  // TODO: create conditional where radioSelect value determines if RandomPics, DogPics, or CatPics is called
+
+  // TODO: send data to <Image /> to display selected pictures to the user
+
+
 
   return (
     <>
