@@ -1,9 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./PictureFlip.css";
 import Images from "./Images";
 import Greeting from "./Greeting";
-import Images2 from "./Images2";
 
 const unsplashUrl = "https://api.unsplash.com/";
 const accessKey = `${process.env.REACT_APP_UNSPLASH_access_key}`;
@@ -21,37 +20,27 @@ const urlRequestDogs =
   accessKey;
 
 
-// GOAL = to retrieve images from unsplash api and display new images when a button is clicked
+// GOAL: = to retrieve images from unsplash api and display new images when a button is clicked
 
 function PictureFlip() {
   const [images, setImages] = useState([]);
   const [radioSelect, setRadioSelect] = useState("random");
 
-  // creates a useEffect that, when called, will retrieve information from the unsplash api
-  // useEffect(() => {
-  //   const fetchImages = async () => {
-  //     const response = await fetch(urlRequestRandom);
-  //     const data = await response.json();
-  //     setImages(data);
-  //   };
-  //   fetchImages();
-  // }, [click]);
-
   const handleChange = (e) => {
     setRadioSelect(e.target.value);
   };
 
-  // TODO: implement Brian Jenney's solution and check for understanding
-  // TODO: figure out how to take data and set it to setImages; perhaps conditionally?
-  // TODO: conditionally assign data retrieved to Image2 depending on which radio button is selected
+  // PURPOSE: variable to be used to store data returned by API
+  
+  let pictures;
 
-
+  // PURPOSE: functions to call API using 3 different parameters and return data to pictures variable
+  
   const RandomPics = () => {
     fetch(urlRequestRandom)
       .then((res) => res.json())
       .then((json) => {
-        // console.log(json);
-        const pictures = json.map((data) => {
+        pictures = json.map((data) => {
           return {
             id: data.id,
             user: data.user.first_name,
@@ -59,19 +48,15 @@ function PictureFlip() {
             html: data.links.html,
           };
         });
-        // console.log(pictures);
-        // for (const thing in pictures){
-        //   console.log(pictures[thing]);
-        // };
       });
+      return pictures;
   };
 
   const CatPics = () => {
     fetch(urlRequestCats)
       .then((res) => res.json())
       .then((json) => {
-        // console.log(json["results"]);
-        const pictures = json["results"].map((data) => {
+        pictures = json["results"].map((data) => {
           return {
             id: data.id,
             user: data.user.first_name,
@@ -79,18 +64,14 @@ function PictureFlip() {
             html: data.links.html,
           };
         });
-        // console.log(pictures);
-        // for (const thing in pictures) {
-        //   console.log(pictures[thing]);
-        // }
       });
+      return pictures;
   };
 
   const DogPics = () => {
     fetch(urlRequestDogs)
       .then((res) => res.json())
       .then((json) => {
-        // console.log(json["results"]);
         const pictures = json["results"].map((data) => {
           return {
             id: data.id,
@@ -99,12 +80,11 @@ function PictureFlip() {
             html: data.links.html,
           };
         });
-        // console.log(pictures);
-        // for (const thing in pictures) {
-        //   console.log(pictures[thing]);
-        // }
       });
+      return pictures;
   };
+
+  // TODO: create conditional where user radioSelect determines if RandomPics, DogPics, or CatPics is called
 
   return (
     <>
@@ -141,10 +121,6 @@ function PictureFlip() {
           Dogs
         </label>
       </div>
-
-      {/* {images.map((image) => (
-        <Images key={image.id} {...image} />
-      ))} */}
     </>
   );
 }

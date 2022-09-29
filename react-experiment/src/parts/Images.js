@@ -1,19 +1,19 @@
-import React from 'react';
-import './Images.css';
+import React from 'react'
+import "./Images.css";
 
-function Images(props) {
+function Images2(props) {
   return (
     <>
-      <img src={props.urls.small} alt='random pic' loading='lazy' />
+      <img src={props.img} alt="random pic" loading="lazy" />
 
       <h3>
         Picture by:{" "}
-        <a href={props.user.links.html} target="_blank" rel="noreferrer">
-          {props.user.first_name}
+        <a href={props.html} target="_blank" rel="noreferrer">
+          {props.user}
         </a>
       </h3>
     </>
   );
 }
 
-export default Images
+export default Images2
