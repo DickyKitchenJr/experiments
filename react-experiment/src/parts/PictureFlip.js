@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./PictureFlip.css";
 import Images from "./Images";
 import Greeting from "./Greeting";
+import NewImage from "./NewImage";
 
 const unsplashUrl = "https://api.unsplash.com/";
 const accessKey = `${process.env.REACT_APP_UNSPLASH_access_key}`;
@@ -132,6 +133,7 @@ function PictureFlip() {
           ></input>
           Dogs
         </label>
+        <NewImage />
       </div>
     </>
   );
