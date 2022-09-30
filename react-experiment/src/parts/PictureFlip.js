@@ -71,7 +71,7 @@ function PictureFlip() {
     fetch(urlRequestDogs)
       .then((res) => res.json())
       .then((json) => {
-        const pictures = json["results"].map((data) => {
+        pictures = json["results"].map((data) => {
           return {
             id: data.id,
             user: data.user.first_name,
@@ -86,7 +86,7 @@ function PictureFlip() {
   // TODO: create conditional where radioSelect value determines if RandomPics, DogPics, or CatPics is called
   // FIXME: returning undefined when console.log(userSelection()) within the return
   // Possible workaround - create 3 Image functions, each with either RandomPics, DogPics, or CatPics, then make the display of <Image /> conditional
-  const userSelection = () => {
+  const UserSelection = () => {
     if (radioSelect === "random") {
       RandomPics();
     } else if (radioSelect === "cats") {
@@ -132,8 +132,6 @@ function PictureFlip() {
           ></input>
           Dogs
         </label>
-        {/* FIXME: returning undefined, why? */}
-        {console.log(userSelection())}
       </div>
     </>
   );
