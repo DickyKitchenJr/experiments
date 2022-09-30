@@ -5,6 +5,8 @@ import "./Images.css";
 function NewImage() {
   // PURPOSE: useState for API data to be set
   const [pictures, setPictures] = useState(null);
+  // PURPOSE: useState to update onClick count to trigger useEffect
+  const [clickCount, setClickCount] = useState(0)
 
   // PURPOSE: API call address
   const unsplashUrl = "https://api.unsplash.com/";
@@ -25,12 +27,12 @@ function NewImage() {
           };
         });
         setPictures(photos);
-        // FIXME: pictures not being updated by setPictures(photos), why?
-        if (pictures) {
+        // FIXME: pictures not being updated initially by setPictures(photos), why?
+        if (clickCount >= 1 && pictures) {
           console.log(pictures);
         }
       });
-  }, []);
+  }, [clickCount]);
 
   //   PURPOSE: iterate through pictures and return img and text for each
   // FIXME: pictures remains null, not updating through useEffect, why?
@@ -50,7 +52,17 @@ function NewImage() {
     }
   };
 
-  return <>{pictures && <ShowPhotos />}</>;
+  // PURPOSE: update clickCount to trigger useEffect re-render
+  const clickPlusOne = () => {
+    setClickCount(clickCount +1)
+    console.log(clickCount)
+  }
+
+  return <>
+  <button onClick={() => {clickPlusOne()}} onChange={() => console.log(pictures)}>Here</button>
+
+  
+  {(clickCount >= 1) && <ShowPhotos />}</>;
 }
 
 export default NewImage;
