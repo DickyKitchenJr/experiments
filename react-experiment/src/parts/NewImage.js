@@ -5,8 +5,6 @@ import "./Images.css";
 function NewImage() {
   // PURPOSE: useState for API data to be set
   const [pictures, setPictures] = useState([]);
-  // PURPOSE: useState to update onClick count to trigger useEffect
-  const [clickCount, setClickCount] = useState(0);
 
   // PURPOSE: API call address
   const unsplashUrl = "https://api.unsplash.com/";
@@ -29,13 +27,7 @@ function NewImage() {
         console.log(photos);
         setPictures(photos);
       });
-  }, [clickCount]);
-
-  // PURPOSE: update clickCount to trigger useEffect re-render
-  const clickPlusOne = () => {
-    setClickCount(clickCount + 1);
-    console.log(clickCount);
-  };
+  }, []);
 
   return (
     <>
@@ -47,7 +39,7 @@ function NewImage() {
                 <img src={photo.img} alt="random pic" />
 
                 <h3>
-                  Picture by:
+                  Picture by: &nbsp;
                   <a href={photo.html} target="_blank" rel="noreferrer">
                     {photo.user}
                   </a>
