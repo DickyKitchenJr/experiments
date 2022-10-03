@@ -9,7 +9,7 @@ function Greeting() {
     <>
       <form>
         <label>
-          What's your name?
+          What's your name? &nbsp;
           <input
             type="text"
             defaultValue={userName}
