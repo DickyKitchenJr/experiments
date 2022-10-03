@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./PictureFlip.css";
 import Greeting from "./Greeting";
-import NewImage from "./NewImage";
+import RandomImages from "./RandomImages";
 import CatImages from "./CatImages";
 import DogImages from "./DogImages";
 
@@ -52,7 +52,7 @@ function PictureFlip() {
           Dogs
         </label>
       </div>
-      {radioSelect === "random" ? <NewImage /> : null}
+      {radioSelect === "random" ? <RandomImages /> : null}
       {radioSelect === "cats" ? <CatImages /> : null}
       {radioSelect === "dogs" ? <DogImages /> : null}
     </>

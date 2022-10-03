@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./Images.css";
 
-function NewImage() {
+function RandomImages() {
   // PURPOSE: useState for API data to be set
   const [pictures, setPictures] = useState([]);
 
@@ -53,4 +53,4 @@ function NewImage() {
   );
 }
 
-export default NewImage;
+export default RandomImages;
