@@ -133,8 +133,9 @@ function PictureFlip() {
           ></input>
           Dogs
         </label>
-        <NewImage />
+        
       </div>
+      <NewImage />
     </>
   );
 }

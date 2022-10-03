@@ -4,9 +4,9 @@ import "./Images.css";
 
 function NewImage() {
   // PURPOSE: useState for API data to be set
-  const [pictures, setPictures] = useState(null);
+  const [pictures, setPictures] = useState([]);
   // PURPOSE: useState to update onClick count to trigger useEffect
-  const [clickCount, setClickCount] = useState(0)
+  const [clickCount, setClickCount] = useState(0);
 
   // PURPOSE: API call address
   const unsplashUrl = "https://api.unsplash.com/";
@@ -26,43 +26,39 @@ function NewImage() {
             html: data.links.html,
           };
         });
+        console.log(photos);
         setPictures(photos);
-        // FIXME: pictures not being updated initially by setPictures(photos), why?
-        if (clickCount >= 1 && pictures) {
-          console.log(pictures);
-        }
       });
   }, [clickCount]);
 
-  //   PURPOSE: iterate through pictures and return img and text for each
-  // FIXME: pictures remains null, not updating through useEffect, why?
-  const ShowPhotos = () => {
-    for (const items in pictures) {
-      return (
-        <>
-          <img src={items.img} alt="random pic" loading="lazy" />
-          <h3>
-            Picture by:
-            <a href={items.html} target="_blank" rel="noreferrer">
-              {items.user}
-            </a>
-          </h3>
-        </>
-      );
-    }
-  };
-
   // PURPOSE: update clickCount to trigger useEffect re-render
   const clickPlusOne = () => {
-    setClickCount(clickCount +1)
-    console.log(clickCount)
-  }
+    setClickCount(clickCount + 1);
+    console.log(clickCount);
+  };
 
-  return <>
-  <button onClick={() => {clickPlusOne()}} onChange={() => console.log(pictures)}>Here</button>
+  return (
+    <>
+      {pictures?.length > 0 && (
+        <div>
+          {pictures.map((photo) => {
+            return (
+              <div key={photo.id} className="images">
+                <img src={photo.img} alt="random pic" />
 
-  
-  {(clickCount >= 1) && <ShowPhotos />}</>;
+                <h3>
+                  Picture by:
+                  <a href={photo.html} target="_blank" rel="noreferrer">
+                    {photo.user}
+                  </a>
+                </h3>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </>
+  );
 }
 
 export default NewImage;
