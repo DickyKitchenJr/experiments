@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./Greeting.css";
 
+// PURPOSE: Create a user input that welcoms the user with the name they input
 function Greeting() {
   const [userName, setUserName] = useState("Default User");
 

@@ -15,8 +15,6 @@ function PictureFlip() {
     setRadioSelect(e.target.value);
   };
 
-  // TODO: send data to <Image /> to display selected pictures to the user
-
   return (
     <>
       <Greeting />
