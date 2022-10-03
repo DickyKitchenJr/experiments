@@ -4,6 +4,7 @@ import "./PictureFlip.css";
 import Images from "./Images";
 import Greeting from "./Greeting";
 import NewImage from "./NewImage";
+import CatImages from "./CatImages";
 
 const unsplashUrl = "https://api.unsplash.com/";
 const accessKey = `${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`;
@@ -133,9 +134,10 @@ function PictureFlip() {
           ></input>
           Dogs
         </label>
-        
       </div>
-      <NewImage />
+      {radioSelect === "random" ? <NewImage /> : null}
+      {radioSelect === "cats" ? <CatImages /> : null}
+      {radioSelect === "dogs" ? <h4>Dogs Here</h4> : null}
     </>
   );
 }
