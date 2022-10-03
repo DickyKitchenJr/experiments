@@ -10,7 +10,7 @@ function NewImage() {
 
   // PURPOSE: API call address
   const unsplashUrl = "https://api.unsplash.com/";
-  const accessKey = `${process.env.REACT_APP_UNSPLASH_access_key}`;
+  const accessKey = `${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`;
   const urlRequestRandom = unsplashUrl + "photos?client_id=" + accessKey;
 
   // PURPOSE: useEffect for calling API and setting data in setPictures
