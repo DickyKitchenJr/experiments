@@ -1,4 +1,6 @@
 .App{
   text-align: center;
   background-image: url("../public/trianglegradient2.png");
+  background-size: auto;
+  background-repeat: round;
 }
