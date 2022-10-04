@@ -50,6 +50,10 @@ function PictureFlip() {
           Dogs
         </label>
       </div>
+      <p>
+        All Pictures Provided Through:{" "}
+        <a href="https://unsplash.com/" target="_blank" rel="noreferrer">UnSplash</a>
+      </p>
       {radioSelect === "random" ? <RandomImages /> : null}
       {radioSelect === "cats" ? <CatImages /> : null}
       {radioSelect === "dogs" ? <DogImages /> : null}
