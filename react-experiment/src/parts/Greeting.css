@@ -1,0 +1,11 @@
+form{
+    width: fit-content;
+    margin: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    border: black solid 3px;
+    font-size: 2rem;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+}

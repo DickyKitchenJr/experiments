@@ -10,7 +10,9 @@ function Greeting() {
     <>
       <form>
         <label>
-          What's your name? &nbsp;
+          Hi!<br/>
+          What's your name?
+          <br/>
           <input
             type="text"
             defaultValue={userName}
@@ -20,7 +22,7 @@ function Greeting() {
           />
         </label>
       </form>
-      <h1>Hi {userName}. What type of pictures do you want to see?</h1>
+      <h1>Welcome {userName}. What type of pictures do you want to see?</h1>
     </>
   );
 }
