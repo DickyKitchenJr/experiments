@@ -10,9 +10,11 @@ function Greeting() {
     <>
       <form>
         <label>
-          Hi!<br/>
+          Hi!
+          <br />
           What's your name?
-          <br/>
+          <br />
+          {/* TODO: Create function to setUserName on change of input text and pass it to the greeting onClick of button */}
           <input
             type="text"
             defaultValue={userName}
@@ -20,6 +22,8 @@ function Greeting() {
             name="userName"
             onChange={(e) => setUserName(e.target.value)}
           />
+          <br />
+          <input type="button" value ="ENTER" />
         </label>
       </form>
       <h1>Welcome {userName}. What type of pictures do you want to see?</h1>
