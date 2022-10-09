@@ -1,6 +1,6 @@
 .greeting{
     border: black solid 5px;
-    width: max-content;
+    width: fit-content;
     margin-top: 17rem;
     margin-bottom: 20rem;
     margin-left: auto;

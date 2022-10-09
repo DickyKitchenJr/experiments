@@ -4,3 +4,12 @@
     border: black solid 3px;
     backdrop-filter: blur(10px);
 }
+
+@media only screen and (max-width: 600px) {
+    .images{
+        max-width: 50%;
+    }
+    img{
+        max-width: 100%;
+    }
+}
