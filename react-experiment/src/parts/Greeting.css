@@ -29,6 +29,10 @@ form{
 }
 
 @media only screen and (max-width: 600px) {
+    .greeting{
+        margin-top: 13rem;
+    }
+
     form{
         font-size: 1.55rem;
     }
