@@ -27,3 +27,13 @@ form{
     padding-bottom: 1rem;
     text-decoration: underline;
 }
+
+@media only screen and (max-width: 600px) {
+    form{
+        font-size: 1.55rem;
+    }
+
+    #welcome{
+        font-size: 1.55rem;
+    }
+}
