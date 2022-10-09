@@ -16,39 +16,43 @@ function Greeting() {
 
   // PURPOSE: to return either the user's selection or Default User
   const userChoice = () => {
-    if(userSelection){
+    if (userSelection) {
       return `${userSelection}`;
     } else {
-      return 'Default User'
-    };
-  }
+      return "Default User";
+    }
+  };
 
   return (
     <>
-      <form>
-        <label>
-          Hi!
-          <br />
-          What's your name?
-          <br />
-          <input
-            type="text"
-            defaultValue="Default User"
-            id="userNameInput"
-            name="userNameInput"
-            onChange={handleChange}
-          />
-          <br />
-          <input
-            type="button"
-            value="ENTER"
-            onClick={() => setUserName(userChoice)}
-          />
-        </label>
-      </form>
-      <h1>
-        Welcome {userName}. What type of
-        pictures do you want to see?
+      <div className="greeting">
+        <form>
+          <label>
+            Hi!
+            <br />
+            What's your name?
+            <br />
+            <input
+              type="text"
+              defaultValue="Default User"
+              id="userNameInput"
+              name="userNameInput"
+              onChange={handleChange}
+            />
+            <br />
+            <a href="#welcome">
+              <input
+                type="button"
+                value="Click Here"
+                onClick={() => setUserName(userChoice)}
+              />
+            </a>
+          </label>
+        </form>
+      </div>
+
+      <h1 id="welcome">
+        Welcome {userName}. What type of pictures do you want to see?
       </h1>
     </>
   );
