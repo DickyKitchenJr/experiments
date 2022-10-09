@@ -18,7 +18,7 @@ function PictureFlip() {
   return (
     <>
       <Greeting />
-      <div>
+      <div className="radio-buttons">
         <label>
           <input
             type="radio"
@@ -52,7 +52,9 @@ function PictureFlip() {
       </div>
       <p>
         All Pictures Provided Through:{" "}
-        <a href="https://unsplash.com/" target="_blank" rel="noreferrer">UnSplash</a>
+        <a href="https://unsplash.com/" target="_blank" rel="noreferrer">
+          UnSplash
+        </a>
       </p>
       {radioSelect === "random" ? <RandomImages /> : null}
       {radioSelect === "cats" ? <CatImages /> : null}
