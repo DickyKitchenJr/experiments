@@ -1,4 +1,4 @@
-.block-group{
+.block-group {
   margin-left: 33%;
   margin-right: 33%;
   margin-top: 2vw;
@@ -7,118 +7,172 @@
   text-align: center;
 }
 
-.block{
+.block {
   background-color: blue;
   border: 2px solid black;
   padding-top: 5vw;
   padding-bottom: 5vw;
 }
 
-.topLeft{
+.topLeft {
   animation: topLeftCornerFlip 1.25s ease-out 1;
 }
 
 @keyframes topLeftCornerFlip {
-  0%{background-color: blue;}
-  50%{background-color: black;
-  transform: rotate3d(2, -2, 0, -180deg);}
-  100%{background-color: blue;
-    transform: rotate3d(4, -4, 0, -360deg);}
+  0% {
+    background-color: blue;
+  }
+  50% {
+    background-color: black;
+    transform: rotate3d(2, -2, 0, -180deg);
+  }
+  100% {
+    background-color: blue;
+    transform: rotate3d(4, -4, 0, -360deg);
+  }
 }
 
-.topCenter{
+.topCenter {
   animation: topCenterTopFlip 1.25s ease-out 1;
 }
 
 @keyframes topCenterTopFlip {
-  0%{background-color: blue;}
-  50%{background-color: black;
-  transform: rotate3d(2, 0, 0, 180deg);}
-  100%{background-color: blue;
-    transform: rotate3d(4, 0, 0, 360deg);}
+  0% {
+    background-color: blue;
+  }
+  50% {
+    background-color: black;
+    transform: rotate3d(2, 0, 0, 180deg);
+  }
+  100% {
+    background-color: blue;
+    transform: rotate3d(4, 0, 0, 360deg);
+  }
 }
 
-.topRight{
+.topRight {
   animation: topRightCornerFlip 1.25s ease-out 1;
 }
 
 @keyframes topRightCornerFlip {
-  0%{background-color: blue;}
-  50%{background-color: black;
-  transform: rotate3d(-2, -2, 0, 180deg);}
-  100%{background-color: blue;
-    transform: rotate3d(-4, -4, 0, 360deg);}
+  0% {
+    background-color: blue;
+  }
+  50% {
+    background-color: black;
+    transform: rotate3d(-2, -2, 0, 180deg);
+  }
+  100% {
+    background-color: blue;
+    transform: rotate3d(-4, -4, 0, 360deg);
+  }
 }
 
-.middleLeft{
+.middleLeft {
   animation: middleLeftLeftFlip 1.25s ease-out 1;
 }
 
 @keyframes middleLeftLeftFlip {
-  0%{background-color: blue;}
-  50%{background-color: black;
-  transform: rotate3d(0, -2, 0, 180deg);}
-  100%{background-color: blue;
-    transform: rotate3d(0, -4, 0, 360deg);}
+  0% {
+    background-color: blue;
+  }
+  50% {
+    background-color: black;
+    transform: rotate3d(0, -2, 0, 180deg);
+  }
+  100% {
+    background-color: blue;
+    transform: rotate3d(0, -4, 0, 360deg);
+  }
 }
 
-.middleCenter{
-  animation: middleCenterPress .5s ease-out 1;
+.middleCenter {
+  animation: middleCenterPress 0.5s ease-out 1;
 }
 
 @keyframes middleCenterPress {
-  0%{background-color: blue;
-  margin: 0;}
-  50%{background-color: rgb(0, 0, 156);
-  margin: .9rem;}
-  100%{background-color: blue;
-  margin: 0;} 
+  0% {
+    background-color: blue;
+    margin: 0;
+  }
+  50% {
+    background-color: rgb(0, 0, 156);
+    margin: 0.9rem;
+  }
+  100% {
+    background-color: blue;
+    margin: 0;
+  }
 }
 
-.middleRight{
+.middleRight {
   animation: middleRightRightFlip 1.25s ease-out 1;
 }
 
 @keyframes middleRightRightFlip {
-  0%{background-color: blue;}
-  50%{background-color: black;
-  transform: rotate3d(0, 2, 0, 180deg);}
-  100%{background-color: blue;
-    transform: rotate3d(0, 4, 0, 360deg);}
+  0% {
+    background-color: blue;
+  }
+  50% {
+    background-color: black;
+    transform: rotate3d(0, 2, 0, 180deg);
+  }
+  100% {
+    background-color: blue;
+    transform: rotate3d(0, 4, 0, 360deg);
+  }
 }
 
-.bottomLeft{
+.bottomLeft {
   animation: bottomLeftCornerFlip 1.25s ease-out 1;
 }
 
 @keyframes bottomLeftCornerFlip {
-  0%{background-color: blue;}
-  50%{background-color: black;
-  transform: rotate3d(2, 2, 0, -180deg);}
-  100%{background-color: blue;
-    transform: rotate3d(4, 4, 0, -360deg);}
+  0% {
+    background-color: blue;
+  }
+  50% {
+    background-color: black;
+    transform: rotate3d(2, 2, 0, -180deg);
+  }
+  100% {
+    background-color: blue;
+    transform: rotate3d(4, 4, 0, -360deg);
+  }
 }
 
-.bottomCenter{
+.bottomCenter {
   animation: bottomCenterTopFlip 1.25s ease-out 1;
 }
 
 @keyframes bottomCenterTopFlip {
-  0%{background-color: blue;}
-  50%{background-color: black;
-  transform: rotate3d(-2, 0, 0, 180deg);}
-  100%{background-color: blue;
-    transform: rotate3d(-4, 0, 0, 360deg);}
+  0% {
+    background-color: blue;
+  }
+  50% {
+    background-color: black;
+    transform: rotate3d(-2, 0, 0, 180deg);
+  }
+  100% {
+    background-color: blue;
+    transform: rotate3d(-4, 0, 0, 360deg);
+  }
 }
 
-.bottomRight{
+.bottomRight {
   animation: bottomRightCornerFlip 1.25s ease-out 1;
 }
 
 @keyframes bottomRightCornerFlip {
-  0%{background-color: blue;}
-  50%{background-color: black;
-  transform: rotate3d(2, -2, 0, 180deg);}
-  100%{background-color: blue;
-    transform: rotate3d(4, -4, 0, 360deg);}
+  0% {
+    background-color: blue;
+  }
+  50% {
+    background-color: black;
+    transform: rotate3d(2, -2, 0, 180deg);
+  }
+  100% {
+    background-color: blue;
+    transform: rotate3d(4, -4, 0, 360deg);
+  }
 }
