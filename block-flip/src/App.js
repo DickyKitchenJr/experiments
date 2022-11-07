@@ -8,7 +8,7 @@ function App() {
 
   const smile = <FontAwesomeIcon icon={faFaceLaughSquint} className="smile" />;
 
-  //PURPOSE: handle click for each block 
+  //PURPOSE: handle click for each block
 
   const handleClickCenter = () => {
     if (press === "") {
@@ -34,7 +34,13 @@ function App() {
     }
   };
 
-  //PURPOSE: reset press after animation runs 
+  const handleClickBottomRight = () => {
+    if (press === "") {
+      setPress("bottomRight");
+    }
+  };
+
+  //PURPOSE: reset press after animation runs
 
   const resetPressForTopLeft = () => {
     setTimeout(() => {
@@ -51,17 +57,27 @@ function App() {
   };
 
   const resetPressForTopRight = () => {
-    if(press === 'topRight'){
+    if (press === "topRight") {
       setTimeout(() => {
-      setPress("");
-    }, 800);
+        setPress("");
+      }, 800);
     }
   };
 
   const resetPressForBottomLeft = () => {
-    setTimeout(() => {
-      setPress("");
-    }, 800);
+    if (press === "bottomLeft") {
+      setTimeout(() => {
+        setPress("");
+      }, 800);
+    }
+  };
+
+  const resetPressForBottomRight = () => {
+    if (press === "bottomRight") {
+      setTimeout(() => {
+        setPress("");
+      }, 800);
+    }
   };
 
   // GOAL: to create a grid of blocks that trigger an animation when each block is clicked
@@ -112,7 +128,12 @@ function App() {
         <div className="block bottomCenter" press={press}>
           <p>{smile}</p>
         </div>
-        <div className="block bottomRight" press={press}>
+        <div
+          className="block bottomRight"
+          onClick={() => handleClickBottomRight()}
+          press={press}
+          onAnimationEnd={() => resetPressForBottomRight()}
+        >
           <p>{smile}</p>
         </div>
       </div>
