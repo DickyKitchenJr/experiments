@@ -29,7 +29,7 @@ function App() {
   const resetPressForTopLeft = () => {
     setTimeout(() => {
       setPress("");
-    }, 1000);
+    }, 800);
   };
 
   const resetPressForCenter = () => {
@@ -43,7 +43,7 @@ function App() {
   const resetPressForTopRight = () => {
     setTimeout(() => {
       setPress("");
-    }, 1000);
+    }, 800);
   };
 
   // GOAL: to create a grid of blocks that trigger an animation when each block is clicked
