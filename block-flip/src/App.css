@@ -12,6 +12,11 @@
   border: 2px solid black;
   padding-top: 5vw;
   padding-bottom: 5vw;
+  color: blue;
+}
+
+.smile {
+  font-size: 4rem;
 }
 
 /* center press animations */

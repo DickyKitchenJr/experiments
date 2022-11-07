@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFaceLaughSquint } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
 function App() {
   const [press, setPress] = useState('');
+
+  const smile = <FontAwesomeIcon icon={faFaceLaughSquint} className="smile"/>;
 
   const handleClickCenter = () => {
     if(press === ''){
@@ -38,16 +42,16 @@ function App() {
           press={press}
           onAnimationEnd={() => resetPress()}
         >
-          <p>X</p>
+          <p>{smile}</p>
         </div>
         <div className="block topCenter" press={press}>
-          <p>X</p>
+          <p>{smile}</p>
         </div>
         <div className="block topRight" press={press}>
-          <p>X</p>
+          <p>{smile}</p>
         </div>
         <div className="block middleLeft" press={press}>
-          <p>X</p>
+          <p>{smile}</p>
         </div>
         <div
           className="block middleCenter"
@@ -55,19 +59,19 @@ function App() {
           onAnimationEnd={() => resetPressforCenter()}
           press={press}
         >
-          <p>X</p>
+          <p>{smile}</p>
         </div>
         <div className="block middleRight" press={press}>
-          <p>X</p>
+          <p>{smile}</p>
         </div>
         <div className="block bottomLeft" press={press}>
-          <p>X</p>
+          <p>{smile}</p>
         </div>
         <div className="block bottomCenter" press={press}>
-          <p>X</p>
+          <p>{smile}</p>
         </div>
         <div className="block bottomRight" press={press}>
-          <p>X</p>
+          <p>{smile}</p>
         </div>
       </div>
     </>
