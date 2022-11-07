@@ -1,35 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceLaughSquint } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
 function App() {
-  const [press, setPress] = useState('');
+  const [press, setPress] = useState("");
 
-  const smile = <FontAwesomeIcon icon={faFaceLaughSquint} className="smile"/>;
+  const smile = <FontAwesomeIcon icon={faFaceLaughSquint} className="smile" />;
 
   const handleClickCenter = () => {
-    if(press === ''){
-      setPress('center');
+    if (press === "") {
+      setPress("center");
     }
-  }
+  };
 
   const handleClickTopLeft = () => {
-    if(press === ''){
+    if (press === "") {
       setPress("topLeft");
     }
   };
 
-  const resetPress = () =>{
-    setTimeout(() => {
-      setPress('')
-    }, 1000);
-  }
+  const handleClickTopRight = () => {
+    if (press === "") {
+      setPress("topRight");
+    }
+  };
 
-  const resetPressforCenter = () => {
+  const resetPressForTopLeft = () => {
     setTimeout(() => {
       setPress("");
-    }, 600);
+    }, 1000);
+  };
+
+  const resetPressForCenter = () => {
+    if (press === "center") {
+      setTimeout(() => {
+        setPress("");
+      }, 600);
+    }
+  };
+
+  const resetPressForTopRight = () => {
+    setTimeout(() => {
+      setPress("");
+    }, 1000);
   };
 
   // GOAL: to create a grid of blocks that trigger an animation when each block is clicked
@@ -40,14 +54,19 @@ function App() {
           className="block topLeft"
           onClick={() => handleClickTopLeft()}
           press={press}
-          onAnimationEnd={() => resetPress()}
+          onAnimationEnd={() => resetPressForTopLeft()}
         >
           <p>{smile}</p>
         </div>
         <div className="block topCenter" press={press}>
           <p>{smile}</p>
         </div>
-        <div className="block topRight" press={press}>
+        <div
+          className="block topRight"
+          onClick={() => handleClickTopRight()}
+          press={press}
+          onAnimationEnd={() => resetPressForTopRight()}
+        >
           <p>{smile}</p>
         </div>
         <div className="block middleLeft" press={press}>
@@ -56,7 +75,7 @@ function App() {
         <div
           className="block middleCenter"
           onClick={() => handleClickCenter()}
-          onAnimationEnd={() => resetPressforCenter()}
+          onAnimationEnd={() => resetPressForCenter()}
           press={press}
         >
           <p>{smile}</p>
