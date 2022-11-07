@@ -560,7 +560,7 @@
 }
 
 .topCenter[press="bottomLeft"] {
-  animation: topMiddleBottomLeftPress 1.25s ease-out 1;
+  animation: topMiddleBottomLeftPress 1.25s ease-out .3s 1;
 }
 
 @keyframes topMiddleBottomLeftPress {
@@ -579,7 +579,7 @@
 }
 
 .topRight[press="bottomLeft"] {
-  animation: topRightBottomLeftPress .5s ease-out 1;
+  animation: topRightBottomLeftPress 1.25s ease-out .4s 1;
 }
 
 @keyframes topRightBottomLeftPress {
@@ -598,7 +598,7 @@
 }
 
 .middleLeft[press="bottomLeft"] {
-  animation: middleLeftBottomLeftPress 1.25s ease-out .3s 1;
+  animation: middleLeftBottomLeftPress 1.25s ease-out 1;
 }
 
 @keyframes middleLeftBottomLeftPress {
@@ -636,7 +636,7 @@
 }
 
 .middleRight[press="bottomLeft"] {
-  animation: middleRightBottomLeftPress 1.25s ease-out 1;
+  animation: middleRightBottomLeftPress 1.25s ease-out .3s 1;
 }
 
 @keyframes middleRightBottomLeftPress {
@@ -655,10 +655,10 @@
 }
 
 .bottomLeft[press="bottomLeft"] {
-  animation: bottomLeftBottomLeftPress 1.25s ease-out .4s 1;
+  animation: bottomLeftPress .5s ease-out 1;
 }
 
-@keyframes bottomLeftBottomLeftPress {
+@keyframes bottomLeftPress {
     0% {
     background-color: blue;
     transform: scale(1);
@@ -674,7 +674,7 @@
 }
 
 .bottomCenter[press="bottomLeft"] {
-  animation: bottomMiddleBottomLeftPress 1.25s ease-out .3s 1;
+  animation: bottomMiddleBottomLeftPress 1.25s ease-out 1;
 }
 
 @keyframes bottomMiddleBottomLeftPress {

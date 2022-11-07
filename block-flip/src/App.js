@@ -8,6 +8,8 @@ function App() {
 
   const smile = <FontAwesomeIcon icon={faFaceLaughSquint} className="smile" />;
 
+  //PURPOSE: handle click for each block 
+
   const handleClickCenter = () => {
     if (press === "") {
       setPress("center");
@@ -26,6 +28,14 @@ function App() {
     }
   };
 
+  const handleClickBottomLeft = () => {
+    if (press === "") {
+      setPress("bottomLeft");
+    }
+  };
+
+  //PURPOSE: reset press after animation runs 
+
   const resetPressForTopLeft = () => {
     setTimeout(() => {
       setPress("");
@@ -41,6 +51,14 @@ function App() {
   };
 
   const resetPressForTopRight = () => {
+    if(press === 'topRight'){
+      setTimeout(() => {
+      setPress("");
+    }, 800);
+    }
+  };
+
+  const resetPressForBottomLeft = () => {
     setTimeout(() => {
       setPress("");
     }, 800);
@@ -83,7 +101,12 @@ function App() {
         <div className="block middleRight" press={press}>
           <p>{smile}</p>
         </div>
-        <div className="block bottomLeft" press={press}>
+        <div
+          className="block bottomLeft"
+          onClick={() => handleClickBottomLeft()}
+          press={press}
+          onAnimationEnd={() => resetPressForBottomLeft()}
+        >
           <p>{smile}</p>
         </div>
         <div className="block bottomCenter" press={press}>
