@@ -58,6 +58,12 @@ function App() {
     }
   };
 
+  const handleClickBottomCenter = () => {
+    if (press === "") {
+      setPress("bottomCenter");
+    }
+  };
+
   //PURPOSE: reset press to '' after animation runs
 
   const resetPressForTopLeft = () => {
@@ -116,6 +122,14 @@ function App() {
 
   const resetPressForMiddleRight = () => {
     if (press === "middleRight") {
+      setTimeout(() => {
+        setPress("");
+      }, 700);
+    }
+  };
+
+  const resetPressForBottomCenter = () => {
+    if (press === "bottomCenter") {
       setTimeout(() => {
         setPress("");
       }, 700);
@@ -182,7 +196,12 @@ function App() {
         >
           <p>{smile}</p>
         </div>
-        <div className="block bottomCenter" press={press}>
+        <div
+          className="block bottomCenter"
+          onClick={() => handleClickBottomCenter()}
+          press={press}
+          onAnimationEnd={() => resetPressForBottomCenter()}
+        >
           <p>{smile}</p>
         </div>
         <div
