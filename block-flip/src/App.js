@@ -40,6 +40,12 @@ function App() {
     }
   };
 
+  const handleClickTopCenter = () => {
+    if (press === "") {
+      setPress("topCenter");
+    }
+  };
+
   //PURPOSE: reset press after animation runs
 
   const resetPressForTopLeft = () => {
@@ -48,7 +54,7 @@ function App() {
     }, 800);
   };
 
-  const resetPressForCenter = () => {
+  const resetPressForMiddleCenter = () => {
     if (press === "center") {
       setTimeout(() => {
         setPress("");
@@ -80,6 +86,14 @@ function App() {
     }
   };
 
+  const resetPressForTopCenter = () => {
+    if (press === "topCenter") {
+      setTimeout(() => {
+        setPress("");
+      }, 800);
+    }
+  };
+
   // GOAL: to create a grid of blocks that trigger an animation when each block is clicked
   return (
     <>
@@ -92,7 +106,12 @@ function App() {
         >
           <p>{smile}</p>
         </div>
-        <div className="block topCenter" press={press}>
+        <div
+          className="block topCenter"
+          onClick={() => handleClickTopCenter()}
+          press={press}
+          onAnimationEnd={() => resetPressForTopCenter()}
+        >
           <p>{smile}</p>
         </div>
         <div
@@ -109,7 +128,7 @@ function App() {
         <div
           className="block middleCenter"
           onClick={() => handleClickCenter()}
-          onAnimationEnd={() => resetPressForCenter()}
+          onAnimationEnd={() => resetPressForMiddleCenter()}
           press={press}
         >
           <p>{smile}</p>
