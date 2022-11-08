@@ -52,7 +52,13 @@ function App() {
     }
   };
 
-  //PURPOSE: reset press after animation runs
+  const handleClickMiddleRight = () => {
+    if (press === "") {
+      setPress("middleRight");
+    }
+  };
+
+  //PURPOSE: reset press to '' after animation runs
 
   const resetPressForTopLeft = () => {
     setTimeout(() => {
@@ -108,6 +114,14 @@ function App() {
     }
   };
 
+  const resetPressForMiddleRight = () => {
+    if (press === "middleRight") {
+      setTimeout(() => {
+        setPress("");
+      }, 700);
+    }
+  };
+
   // GOAL: to create a grid of blocks that trigger an animation in a wave pattern when each block is clicked
   return (
     <>
@@ -147,12 +161,17 @@ function App() {
         <div
           className="block middleCenter"
           onClick={() => handleClickCenter()}
-          onAnimationEnd={() => resetPressForMiddleCenter()}
           press={press}
+          onAnimationEnd={() => resetPressForMiddleCenter()}
         >
           <p>{smile}</p>
         </div>
-        <div className="block middleRight" press={press}>
+        <div
+          className="block middleRight"
+          onClick={() => handleClickMiddleRight()}
+          press={press}
+          onAnimationEnd={() => resetPressForMiddleRight()}
+        >
           <p>{smile}</p>
         </div>
         <div
