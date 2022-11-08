@@ -1056,3 +1056,176 @@
     transform: scale(1);
   }
 }
+
+/* middle left press animations */
+
+.topLeft[press="middleLeft"] {
+  animation: topLeftMiddleLeftPress 1.25s ease-out 1;
+}
+
+@keyframes topLeftMiddleLeftPress {
+  0% {
+    background-color: blue;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgb(0, 0, 156);
+    transform: scale(0.95);
+  }
+  100% {
+    background-color: blue;
+    transform: scale(1);
+  }
+}
+
+.topCenter[press="middleLeft"] {
+  animation: topCenterMiddleLeftPress 1.25s ease-out .15s 1;
+}
+
+@keyframes topCenterMiddleLeftPress {
+  0% {
+    background-color: blue;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgb(0, 0, 156);
+    transform: scale(0.95);
+  }
+  100% {
+    background-color: blue;
+    transform: scale(1);
+  }
+}
+
+.topRight[press="middleLeft"] {
+  animation: topRightTopCenterPress 1.25s ease-out .3s 1;
+}
+
+@keyframes topRightMiddleLeftPress {
+  0% {
+    background-color: blue;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgb(0, 0, 156);
+    transform: scale(0.95);
+  }
+  100% {
+    background-color: blue;
+    transform: scale(1);
+  }
+}
+
+.middleLeft[press="middleLeft"] {
+  animation: middleLeftPress .5s ease-out 1;
+}
+
+@keyframes middleLeftPress {
+  0% {
+    background-color: blue;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgb(0, 0, 156);
+    transform: scale(0.95);
+  }
+  100% {
+    background-color: blue;
+    transform: scale(1);
+  }
+}
+
+.middleCenter[press="middleLeft"] {
+  animation: middleCenterMiddleLeftPress 1.25s ease-out 1;
+}
+
+@keyframes middleCenterMiddleLeftPress {
+  0% {
+    background-color: blue;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgb(0, 0, 156);
+    transform: scale(0.95);
+  }
+  100% {
+    background-color: blue;
+    transform: scale(1);
+  }
+}
+
+.middleRight[press="middleLeft"] {
+  animation: middleRightMiddleLeftPress 1.25s ease-out .15s 1;
+}
+
+@keyframes middleRightMiddleLeftPress {
+  0% {
+    background-color: blue;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgb(0, 0, 156);
+    transform: scale(0.95);
+  }
+  100% {
+    background-color: blue;
+    transform: scale(1);
+  }
+}
+
+.bottomLeft[press="middleLeft"] {
+  animation: bottomLeftMiddleLeftPress 1.25s ease-out 1;
+}
+
+@keyframes bottomLeftMiddleLeftPress {
+  0% {
+    background-color: blue;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgb(0, 0, 156);
+    transform: scale(0.95);
+  }
+  100% {
+    background-color: blue;
+    transform: scale(1);
+  }
+}
+
+.bottomCenter[press="middleLeft"] {
+  animation: bottomMiddleMiddleLeftPress 1.25s ease-out .15s 1;
+}
+
+@keyframes bottomMiddleMiddleLeftPress {
+  0% {
+    background-color: blue;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgb(0, 0, 156);
+    transform: scale(0.95);
+  }
+  100% {
+    background-color: blue;
+    transform: scale(1);
+  }
+}
+
+.bottomRight[press="middleLeft"] {
+  animation: bottomRightMiddleLeftPress 1.25s ease-out .3s 1;
+}
+
+@keyframes bottomRightMiddleLeftPress {
+  0% {
+    background-color: blue;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgb(0, 0, 156);
+    transform: scale(0.95);
+  }
+  100% {
+    background-color: blue;
+    transform: scale(1);
+  }
+}
