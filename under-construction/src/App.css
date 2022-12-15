@@ -17,4 +17,12 @@ h1{
 
 .dog{
   max-width: 25%;
+  animation: dog 3s linear infinite;
+}
+
+@keyframes dog {
+  0% {transform: translate(10vw);}
+  33% {transform: scaleX(-1) translate(0vw);}
+
+
 }
