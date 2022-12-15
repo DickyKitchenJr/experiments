@@ -7,8 +7,8 @@ function App() {
       <div className="main-box">
         <div className="interior-box">
           <img className="dog" src={Dog} alt="drawing of a dog" />
-          <h1>Under Construction</h1>
         </div>
+        <h1>Under Construction</h1>
       </div>
     </>
   );

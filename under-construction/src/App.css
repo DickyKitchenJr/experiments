@@ -1,5 +1,18 @@
 .main-box{
   background-color: aqua;
+  padding: 7rem 2rem;
+}
+
+.interior-box{
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 7vw;
+  font-weight: bold;
+  text-align: center;
 }
 
 .dog{
