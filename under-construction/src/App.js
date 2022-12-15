@@ -1,10 +1,15 @@
-
-import './App.css';
+import Dog from "./Image/dog-drawing.png";
+import "./App.css";
 
 function App() {
   return (
     <>
-    <h1>Here I am</h1>
+      <div className="main-box">
+        <div className="interior-box">
+          <img className="dog" src={Dog} alt="drawing of a dog" />
+          <h1>Under Construction</h1>
+        </div>
+      </div>
     </>
   );
 }
