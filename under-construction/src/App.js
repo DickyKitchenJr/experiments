@@ -9,6 +9,9 @@ function App() {
           <img className="dog" src={Dog} alt="drawing of a dog" />
         </div>
         <h1>Under Construction</h1>
+        <p>
+          To see past projects, visit <a href="https://dickykitchen.com/">my portfolio</a>.
+        </p>
       </div>
     </>
   );
