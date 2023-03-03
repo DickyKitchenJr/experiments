@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import HelmetTest from "./HelmetTest";
-import { Helmet } from 'react-helmet';
+import Child1 from "./Child1";
+import Child2 from "./Child2";
 import './AppLight.css';
 import './AppDark.css'
 
@@ -17,19 +17,21 @@ function App() {
 
   return (
     <>
-      {/* TODO: fix so that props flow to childres
-       <Helmet>
-        {helmetStyles === 1 ? <link rel="stylesheet" href="./helmet.css" /> : null}
-      </Helmet> */}
-      <h1 className={styles === 0 ? 'light' : 'dark'}>Here I Am!</h1>
-      <br /><br />
+      <h1 className={styles === 0 ? "light" : "dark"}>Here I Am!</h1>
+      <br />
+      <br />
       <button onClick={handleClick}>Style On/Off</button>
-      <br /><br />
+      <br />
+      <br />
       <p onClick={handleClick}>Or Click Here</p>
       <br />
-      <h2 className={`${styles === 0 ? 'light' : 'dark'}app`}>Do I change too?</h2>
-      <br /><br />
-      <HelmetTest />
+      <h2 className={`${styles === 0 ? "light" : "dark"}app`}>
+        Do I change too?
+      </h2>
+      <br />
+      <br />
+      <Child1 styling={styles === 0 ? "light" : "dark"} />
+      <Child2 styling={styles === 0 ? "light" : "dark"} />
     </>
   );
 }
