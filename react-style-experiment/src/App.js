@@ -50,6 +50,7 @@ function App() {
       <Child2 styling={styles === 0 ? "light" : "dark"} />
       <Child3 styling={namedStyles} />
       <Child4 styling={namedStyles} />
+      
     </>
   );
 }
