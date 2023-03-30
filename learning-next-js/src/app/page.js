@@ -7,18 +7,20 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main className={styles.main}>
+      <p>p element within main but above the first div</p>
       <div className={styles.description}>
         <p>
-          Get started by editing&nbsp;
+          [P ELEMENT IN FIRST DIV] Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.js</code>
         </p>
         <div>
+          <p>p element within main in the child div of first div</p>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            [ANCHOR ELEMENT IN CHILD DIV OF FIRST DIV] By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -28,8 +30,14 @@ export default function Home() {
               priority
             />
           </a>
+          <p>
+            p element within main but under the a element in child div of first
+            div
+          </p>
         </div>
+        <p>p element within main but under child div of first div</p>
       </div>
+      <p>EVERYTHING ABOVE THIS IS IN THE FIRST DIV WITHIN MAIN</p>
 
       <div className={styles.center}>
         <Image
@@ -87,5 +95,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
