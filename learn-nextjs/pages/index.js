@@ -5,6 +5,10 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// TODO: learn what is and is not needed in a next.js page to create a single page app 
+// that fetches character information from the marvel API and displays the character picture
+// and bio to the user after they have typed in a character name
+
 export default function Home() {
   return (
     <>
