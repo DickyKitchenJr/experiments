@@ -12,3 +12,11 @@ h1{
 h2{
     text-align: center;
 }
+
+pre{
+    background-color: rgb(195, 194, 194);
+    width: fit-content;
+    padding: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
