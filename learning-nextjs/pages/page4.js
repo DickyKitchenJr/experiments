@@ -30,7 +30,11 @@ export default function Page4(){
         </p>
         <p>Now all of the styles you set up within the global.css file should be shown on every page.</p>
 
+        <p>Ready to learn about local CSS stylings? On to page 5!</p>
+
         <Link href="/page3">Page 3</Link>
+        <br />
+        <Link href="/page5">Page 5</Link>
       </>
     );
 }
