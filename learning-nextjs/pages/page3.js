@@ -4,10 +4,13 @@ export default function Page3() {
   const code = `export default function App({ Component, pageProps }) {
   return (
     <>
-      <h1>
-        Header (you'll notice the header stays the same on every page, see page
-        3 for why)
-      </h1>
+      <header>
+        <h1>
+        Learning Nextjs Basics
+        </h1>
+        <h3>(want to know how to code it once and have it appear on every page? see page
+        3)</h3>
+      </header>
       <Component {...pageProps} />
     </>
   );
