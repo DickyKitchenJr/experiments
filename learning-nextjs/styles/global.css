@@ -2,20 +2,31 @@ html{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-h1{
+header{
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: paleturquoise;
+    background-color: rgb(46, 46, 46);
+    color: rgb(240, 240, 240);
     padding: 1em;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h2{
     text-align: center;
 }
 
+p{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 pre{
-    background-color: rgb(195, 194, 194);
-    width: fit-content;
+    background-color: rgb(46, 46, 46);
+    color: rgb(240, 240, 240);
+    max-width: fit-content;
+    overflow: scroll;
     padding: 1rem;
     margin-right: auto;
     margin-left: auto;
