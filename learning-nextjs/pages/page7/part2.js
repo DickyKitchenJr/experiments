@@ -16,8 +16,17 @@ export default function Page7Part2() {
         to) dynamic nesting.
       </p>
 
-      <Link href='/page7/part1'>Page 7 Part 1</Link>
-      <Link href='/page8'>Page 8</Link>
+      <p>
+        There are many other tricks that can be done with Nextjs, and you should
+        definitely explore <a href="https://nextjs.org/docs">their docs</a> as
+        you build out your own projects and continue to learn, but with these
+        fundamentals you should now be able to start your own Nextjs project and
+        build a site with fast load speeds and dynamic aspects.
+      </p>
+
+      <Link href="/page7/part1">Page 7 Part 1</Link>
+      <br />
+      <Link href="/">Back to Home</Link>
     </>
   );
 }
