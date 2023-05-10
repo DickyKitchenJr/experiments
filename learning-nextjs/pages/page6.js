@@ -46,22 +46,20 @@ export async function getStaticProps() {
         <strong>props:{}</strong> with an object that holds the data that we
         want to use.
       </p>
-      <p>
-        It's important to note a couple things here:
-        <ol>
-          <li>
-            The getStaticProps function must be named{" "}
-            <strong>getStaticProps</strong>
-          </li>
-          <li>
-            It must return an object with a <strong>props</strong> object
-          </li>
-          <li>
-            The data to be used will be assigned to key/value pairs within the{" "}
-            <strong>props</strong> object
-          </li>
-        </ol>
-      </p>
+      <p>It's important to note a couple things here:</p>
+      <ol>
+        <li>
+          The getStaticProps function must be named{" "}
+          <strong>getStaticProps</strong>
+        </li>
+        <li>
+          It must return an object with a <strong>props</strong> object
+        </li>
+        <li>
+          The data to be used will be assigned to key/value pairs within the{" "}
+          <strong>props</strong> object
+        </li>
+      </ol>
       <p>
         Once you understand that, you can see how the <strong>props</strong> is
         passed to the <strong>PageName</strong> function at the top of the code
@@ -87,6 +85,72 @@ export async function getStaticProps() {
         Wolverine is already loaded from the Marvel API upon display of the page
         and doesn't have to be fetched while the page loads.
       </p>
+
+      <p>
+        But what if you want the information to update as the source updates?
+        That can be achieved by adding <strong>revalidate</strong> with a time
+        value to the getStaticProps returned object and would look like this:
+      </p>
+
+      <pre>
+        <code>
+          {`export async function getStaticProps() {
+    const response = await fetch("API url goes here");
+    const data = await response.json();
+
+    return {
+        props: {
+            something: data.something
+        },
+        revalidate: 10,
+    }
+}`}
+        </code>
+      </pre>
+
+      <p>
+        In the above section of code, the <strong>revalidate: 10</strong> will
+        cause the page to regenerate in the background if the page is requested
+        after 10 seconds, and the following page request will have the updated
+        information.
+      </p>
+
+      <p>
+        The exact wording Nextjs uses to describe this on{" "}
+        <a href="https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration">
+          their docs
+        </a>{" "}
+        is:
+      </p>
+
+      <em>
+        <p>
+          When a request is made to a page that was pre-rendered at build time,
+          it will initially show the cached page.
+        </p>
+        <ul>
+          <li>
+            {" "}
+            Any requests to the page after the initial request and before 10
+            seconds are also cached and instantaneous.
+          </li>
+          <li>
+            After the 10-second window, the next request will still show the
+            cached (stale) page Next.js triggers a regeneration of the page in
+            the background.
+          </li>
+          <li>
+            Once the page generates successfully, Next.js will invalidate the
+            cache and show the updated page.
+          </li>
+          <li>
+            If the background regeneration fails, the old page would still be
+            unaltered.
+          </li>
+        </ul>
+      </em>
+
+      <p>What this means is that you are able to get the best of both worlds; The speed of a static generated page with the ability of a dynamic page.</p>
 
       <p>Next up: Nested Routes</p>
 
