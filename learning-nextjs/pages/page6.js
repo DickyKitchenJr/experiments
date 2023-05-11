@@ -25,14 +25,16 @@ export async function getStaticProps() {
       <h2>getStaticProps</h2>
 
       <p>
-        Nextjs can pull resources from a dynamic source (like an API) and
-        pre-staticlly generate it so that your website load times are fast.
+        Next.js can pull resources from a dynamic source (like an API) and
+        pre-statically generate it so that your website load times are fast.
       </p>
+
       <p>
         Using the built-in function <strong>getStaticProps( )</strong>, you are
         able to call on the resource and create props that can then be used
         within the page you are building.
       </p>
+
       <p>Take a look at the below code for an example.</p>
 
       <pre>
@@ -46,7 +48,9 @@ export async function getStaticProps() {
         <strong>props:{}</strong> with an object that holds the data that we
         want to use.
       </p>
+
       <p>It's important to note a couple things here:</p>
+
       <ol>
         <li>
           The getStaticProps function must be named{" "}
@@ -60,6 +64,7 @@ export async function getStaticProps() {
           <strong>props</strong> object
         </li>
       </ol>
+
       <p>
         Once you understand that, you can see how the <strong>props</strong> is
         passed to the <strong>PageName</strong> function at the top of the code
@@ -72,6 +77,7 @@ export async function getStaticProps() {
         updating, but it is useful for preloading data that can safely be used
         as a snapshot of that moment.
       </p>
+
       <p>
         To see an example you can click my{" "}
         <a href="https://nextjs-marvel-character-search.vercel.app/">
@@ -116,7 +122,7 @@ export async function getStaticProps() {
       </p>
 
       <p>
-        The exact wording Nextjs uses to describe this on{" "}
+        The exact wording Next.js uses to describe this on{" "}
         <a href="https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration">
           their docs
         </a>{" "}
@@ -128,6 +134,7 @@ export async function getStaticProps() {
           When a request is made to a page that was pre-rendered at build time,
           it will initially show the cached page.
         </p>
+
         <ul>
           <li>
             {" "}
@@ -150,7 +157,10 @@ export async function getStaticProps() {
         </ul>
       </em>
 
-      <p>What this means is that you are able to get the best of both worlds; The speed of a static generated page with the ability of a dynamic page.</p>
+      <p>
+        What this means is that you are able to get the best of both worlds; The
+        speed of a static generated page with the ability of a dynamic page.
+      </p>
 
       <p>Next up: Nested Routes</p>
 
