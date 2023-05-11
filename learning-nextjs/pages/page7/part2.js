@@ -11,16 +11,16 @@ export default function Page7Part2() {
       </p>
 
       <p>
-        Be aware that this is a basic approach to nesting routes in Nextjs and
+        Be aware that this is a basic approach to nesting routes in Next.js and
         there is more that can be done beyond this including (but not limited
         to) dynamic nesting.
       </p>
 
       <p>
-        There are many other tricks that can be done with Nextjs, and you should
+        There are many other tricks that can be done with Next.js, and you should
         definitely explore <a href="https://nextjs.org/docs">their docs</a> as
         you build out your own projects and continue to learn, but with these
-        fundamentals you should now be able to start your own Nextjs project and
+        fundamentals you should now be able to start your own Next.js project and
         build a site with fast load speeds and dynamic aspects.
       </p>
 
