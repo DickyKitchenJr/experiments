@@ -1,5 +1,5 @@
 html{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Verdana, Georgia, sans-serif;
 }
 
 header{
@@ -20,6 +20,7 @@ h2{
 p{
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-bottom: 0.25rem;
 }
 
 pre{
@@ -30,4 +31,9 @@ pre{
     padding: 1rem;
     margin-right: auto;
     margin-left: auto;
+}
+
+.image{
+    display: flex;
+    justify-content: center;
 }
