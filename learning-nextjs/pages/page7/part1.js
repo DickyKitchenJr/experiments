@@ -7,14 +7,14 @@ export default function Page7Part1() {
 
       <p>
         If you've been paying attention to the url bar, you should have noticed
-        that home page ended in '/' while the other pages ended in '/page' with
-        the number at the end.
+        that, after the home page, the other pages ended in '/page' with
+        the number at the end (essentially ending with the file name).
       </p>
 
       <p>
-        This is due to Nextjs built-in routing where the page url is assigned
+        This is due to Next.js built-in routing where the page url is assigned
         the file name and can be accessed by importing and using the{" "}
-        <strong>Link</strong> element provided by Nextjs (see{" "}
+        <strong>Link</strong> element provided by Next.js (see{" "}
         <Link href="/page2">Page 2</Link> if you need a refresher on{" "}
         <strong>Link</strong>). But what if you need to nest your routing?
       </p>
@@ -36,11 +36,15 @@ export default function Page7Part1() {
         <strong>part1.js</strong>).
       </p>
 
-      <p>Now that you've done that you should be able to type the nested url into the page bar and see your new page. Or you could use Link to navigate like we've been doing.</p>
+      <p>
+        Now that you've done that you should be able to type the nested url into
+        the page bar and see your new page. Or you could use Link to navigate
+        like we've been doing.
+      </p>
 
-      <Link href='/page6'>Page 6</Link>
+      <Link href="/page6">Page 6</Link>
       <br />
-      <Link href='/page7/part2'>Page 7 Part 2</Link>
+      <Link href="/page7/part2">Page 7 Part 2</Link>
     </>
   );
 }
