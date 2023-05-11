@@ -5,11 +5,12 @@ export default function App({ Component, pageProps }) {
     <>
       <header>
         <h1>
-        Learning Nextjs Basics
+        Learning Next.js Basics
       </h1>
-      <h3>(want to know how to code it once and have it appear on every page? see page
-        3)</h3>
+
+      <h3>(how to get started on a Next.js project today)</h3>
       </header>
+
       <Component {...pageProps} />
     </>
   );
