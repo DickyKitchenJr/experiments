@@ -6,8 +6,8 @@ export default function Home() {
       <h2>Home Page [index.js]</h2>
 
       <p>
-        In this starter overview of Nextjs we'll discuss the fundamental basics
-        of creating a new Nextjs project and how to get started on building out
+        In this starter overview of Next.js we'll discuss the fundamental basics
+        of creating a new Next.js project and how to get started on building out
         your project. It's important to note that you should already have a
         fundamental understanding of React, JavaScript, HTML and CSS prior to
         going through this walkthrough.
@@ -16,14 +16,14 @@ export default function Home() {
       <p>
         If you do better learning through step-by-step video tutorials, I
         recommend you check out{" "}
-        <a href="https://youtu.be/qwhMyVVnmKM">LearnWebCode</a> for their Nextjs
+        <a href="https://youtu.be/qwhMyVVnmKM">LearnWebCode</a> for their Next.js
         beginner tutorial. And of course, if you prefer a more detailed
         approach, you should check the{" "}
-        <a href="https://nextjs.org/docs">Nextjs Docs</a>
+        <a href="https://nextjs.org/docs">Next.js Docs</a>
       </p>
 
       <p>
-        To start up a new Nextjs project you have 2 main options. One options is
+        To start up a new Next.js project you have 2 main options. One options is
         to go in the terminal and run{" "}
         <strong>npx create-next-app@latest</strong>, which will give you prompts
         to answer and then automatically supply you with a bunch of boilerplate
@@ -81,18 +81,21 @@ export default function Home() {
       <p>
         This is the main page, or home page of the site. To create it you'll
         want to add a folder named <strong>pages</strong>, and within that
-        folder add a file named <strong>index.js</strong>. That will let Nextjs
+        folder add a file named <strong>index.js</strong>. That will let Next.js
         know that this is the starting point of your site.
       </p>
+
       <p>
         You can think of it similar to the index.html file used when building an
         HTML page.
       </p>
+
       <p>
-        With Nextjs, all of your pages will be stored in the{" "}
+        With Next.js, all of your pages will be stored in the{" "}
         <strong>pages</strong> folder with the main/home page named{" "}
         <strong>index.js</strong>.
       </p>
+
       <p>
         The main/home page <u>must</u> be named <strong>index.js</strong>,
         however other pages can be named whatever you'd like provided they are
