@@ -5,6 +5,7 @@ import Child3 from "./Child3";
 import Child4 from "./Child4";
 import "./AppLight.css";
 import "./AppDark.css";
+import Modal from "./components/Modal";
 
 function App() {
   const [styles, setStyle] = useState(0);
@@ -74,6 +75,8 @@ function App() {
           the amazing information at their disposal
         </dialog>
       ) : null}
+
+      <Modal />
     </>
   );
 }
