@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import Header from './components/Header'
 import ImageGrid from './components/ImageGrid'
 import TestImage from './assets/images/testImage.png';
+import DisplayRandom from './components/DisplayRandom'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -46,7 +47,7 @@ function App() {
         <img style={{justifySelf: 'center'}} src={TestImage} alt="test image" width={450} height={100}/>
       </div>
       <button><img src={TestImage} alt="test image" width={450} height={100}/></button>
-      
+      <DisplayRandom />
     </>
   )
 }
