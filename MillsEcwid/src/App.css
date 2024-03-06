@@ -1,42 +1,56 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Glitch";
+  src: url(./Fonts/Eordeoghlakat.otf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Impact";
+  src: url(./Fonts/impact.ttf);
+  font-display: swap;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.house {
+  color: red;
+  font-size: 5vw;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  font-size: 6.5vw;
+  font-family: "Glitch", Arial, Helvetica, sans-serif;
+  color: white;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.logo span {
+  color: red;
+  font-family: "Impact";
+  font-size: 6vw;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 600px) {
+  .logo span {
+    letter-spacing: -0.2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .house{
+    font-size: 3vw;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
